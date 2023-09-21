@@ -50,7 +50,7 @@
         <main class="main">
             <!--==================== HOME ====================-->
             <section class="home" id="home">
-                <img src="assets/img/home1.jpg" alt="" class="home__img">
+                <img src="assets/img//pexels-ankiyay-2528431.jpg" alt="" class="home__img">
 
                 <div class="home__container container grid">
                     <div class="home__data">
@@ -332,33 +332,61 @@
             <section class="subscribe section">
                 <div class="subscribe__bg">
                     <div class="subscribe__container container">
-                        <h2 class="section__title subscribe__title">Subscribe Our <br> Newsletter</h2>
-                        <p class="subscribe__description">Subscribe to our newsletter and get a 
-                            special 30% discount.
+                        <h2 class="section__title subscribe__title">Contact Us <br> Through Email</h2>
+                        <p class="subscribe__description">Get a special 30% discount for your first booking
                         </p>
             
-                        <form action="send_email.php" method="POST" class="subscribe__form">
-                            <input type="text" name="name" placeholder="Your name" class="subscribe__input" required>
+                        <form id="emailForm" class="subscribe__form">
+                            <input type="text" id="name" placeholder="Your name" class="subscribe__input" required>
                             <!-- Add 'required' to make the name field mandatory -->
             
-                            <input type="tel" name="phonenumber" placeholder="Phone number" class="subscribe__input" required>
+                            <input type="tel" id="phonenumber" placeholder="Phone number" class="subscribe__input" required>
                             <!-- Add 'required' to make the phone number field mandatory -->
                 
-                            <!-- Clicking this link will open the default email client to send an email -->
-                            <a href="mailto:recipient@example.com" class="button">Send Email for Inquiry</a>
+                            <!-- Button to pre-fill email content -->
+                            <button type="button" id="composeEmail" class="button">
+                                Email
+                            </button>
                         </form>
                     </div>
                 </div>
             </section>
-            
-            
-           
         </main>
 
         <a href="#" class="scrollup" id="scroll-up">
             <i class="ri-arrow-up-line scrollup__icon"></i>
         </a>
 
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const composeEmailButton = document.getElementById("composeEmail");
+                const nameInput = document.getElementById("name");
+                const phoneNumberInput = document.getElementById("phonenumber");
+        
+                composeEmailButton.addEventListener("click", function () {
+                    const recipientEmail = "recipient@example.com"; // Replace with the actual recipient's email address
+                    const subject = "Inquiry";
+                    const name = nameInput.value;
+                    const phoneNumber = phoneNumberInput.value;
+                    const body = `Hello,
+        
+        I am interested in your products/services and have some inquiries.
+        
+        Name: ${name}
+        Phone Number: ${phoneNumber}
+        
+        Please get back to me at your earliest convenience.
+        
+        Sincerely,
+        ${name}`;
+        
+                    const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    
+                    // Open the user's default email client with the pre-filled email
+                    window.location.href = mailtoLink;
+                });
+            });
+        </script>
         <script src="./assets/js/scrollreveal.min.js"></script>
         <script src="./assets/js/swiper-bundle.min.js"></script>
         <script src="./assets/js/main.js"></script>
