@@ -172,3 +172,45 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+// Function to show the modal and populate its content
+function showModal(cardNumber) {
+    var modal = document.getElementById("myModal");
+    var imgSrc = document.querySelector(".place__card:nth-child(" + cardNumber + ") .place__img").src;
+    var title = document.querySelector(".place__card:nth-child(" + cardNumber + ") .place__title").textContent;
+    var subtitle = document.querySelector(".place__card:nth-child(" + cardNumber + ") .place__subtitle").textContent;
+    var price = document.querySelector(".place__card:nth-child(" + cardNumber + ") .place__price").textContent;
+  
+    var modalImg = document.getElementById("modal-img");
+    var modalTitle = document.getElementById("modal-title");
+    var modalSubtitle = document.getElementById("modal-subtitle");
+    var modalPrice = document.getElementById("modal-price");
+  
+    modalImg.src = imgSrc;
+    modalTitle.textContent = title;
+    modalSubtitle.textContent = subtitle;
+    modalPrice.textContent = price;
+  
+    modal.style.display = "block";
+  
+    // Add an event listener to close the modal when clicking outside of it
+    window.addEventListener("click", function(event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+  }
+  
+  // Function to close the modal
+  function closeModal() {
+    var modal = document.getElementById('myModal');
+    modal.style.display = 'none';
+}
+  
+  // Add this script to hide the modal when the page loads
+  window.onload = function() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+  };
+  
+  

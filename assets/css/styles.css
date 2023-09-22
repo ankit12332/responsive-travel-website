@@ -216,6 +216,122 @@ input {
   font-size: 1.2rem;
   cursor: pointer;
 }
+/* Add your existing CSS for the modal here */
+
+textarea {
+  resize: none; /* Prevent textarea resizing */
+}
+
+#form-container {
+  width: 73%;
+  padding: 20px;
+  background-color: var(--body-color);
+  color: #fff;
+  text-align: left;
+  margin-left: 20px; /* Adjust spacing from the image */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-size: 16px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+  padding: 8px;
+  border: 1px solid #888;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* You can add more styling as needed */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: var(--body-color);
+  margin: 10% auto 0; /* Adjust the margin-top value as needed */
+  padding: 20px;
+  border: 1px solid #888;
+  max-width: 80%;
+  text-align: center;
+  position: relative;
+  display: flex; /* Use flexbox for the layout */
+  flex-direction: row; /* Arrange content in a row */
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#modal-img-container {
+  max-width: 40%; /* Adjust the container width as needed */
+  position: relative;
+}
+
+#modal-img {
+  max-width: 100%;
+  display: block; /* Ensure the image takes up the entire container */
+}
+
+#modal-text-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-align: left;
+}
+
+#modal-title {
+  font-size: 24px;
+  color: #fff;
+}
+
+#modal-subtitle {
+  font-size: 18px;
+}
+
+#modal-price {
+  font-size: 20px;
+  font-weight: bold;
+}
 
 .nav__menu {
   position: relative;
