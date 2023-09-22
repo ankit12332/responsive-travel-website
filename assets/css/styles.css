@@ -289,6 +289,8 @@ button:hover {
   position: relative;
   display: flex; /* Use flexbox for the layout */
   flex-direction: row; /* Arrange content in a row */
+  max-height: 80vh; /* Set a maximum height for the modal */
+  overflow-y: auto; /* Add vertical scroll if content exceeds max-height */
 }
 
 .close {
@@ -331,6 +333,33 @@ button:hover {
 #modal-price {
   font-size: 20px;
   font-weight: bold;
+}
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+  .modal-content {
+    flex-direction: column; /* Stack content in a column for smaller screens */
+  }
+
+  #modal-img-container {
+    max-width: 100%; /* Image takes up full width on smaller screens */
+  }
+
+  #modal-text-container {
+    position: relative; /* Reset positioning for text container */
+    text-align: center;
+  }
+
+  #modal-title {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+
+  #modal-subtitle {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+
+  #modal-price {
+    font-size: 18px; /* Adjust font size for smaller screens */
+  }
 }
 
 .nav__menu {
